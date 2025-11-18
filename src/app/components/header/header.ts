@@ -341,7 +341,7 @@ export class Header implements OnInit {
   isAuthenticated = false;
   isPrimaryDropdownOpen = false;
   isUserDropdownOpen = false;
-  marcas: [] = [];
+  marcas: string[] = [];
 
   ngOnInit(): void {
     this.checkAuthentication();
@@ -360,7 +360,7 @@ export class Header implements OnInit {
   // MÉTODOS DE DATOS - SEPARADOS PARA FÁCIL IDENTIFICACIÓN
   async loadPrimaryData(): Promise<void> {
     const data = await this.serviceCubos.getMarcas();
-    //this.marcas = data;
+    this.marcas = data;
   }
 
   // MÉTODOS DROPDOWN - GENÉRICOS PARA COPIAR
