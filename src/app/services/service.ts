@@ -56,12 +56,12 @@ export class ServiceCubos {
     return response.data
   }
 
-  async createCompra(idcubo: number): Promise<number> {
+  async createCompra(idcubo: number): Promise<any> {
     const token = localStorage.getItem('token')
     const headers = { Authorization: `Bearer ${token}` };
-    const request = 'api/compra/insertarpedido'
+    const request = 'api/compra/insertarpedido/' + idcubo
     const url = environment.URL_AUTH + request
-    const response = await axios.post(url, idcubo, { headers })
+    const response = await axios.post(url, null, { headers })
     return response.data
   }
 

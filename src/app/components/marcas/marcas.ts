@@ -95,6 +95,9 @@ import { Cubo } from '../../models/cubo';
                     <td class="px-6 py-4">
                       <div class="text-zinc-300">{{ cubo.color }}</div>
                     </td>
+                    <td class="px-6 py-4">
+                      <div class="text-zinc-300">€{{ cubo.precio }}.00</div>
+                    </td>
                   </tr>
                   }
                 </tbody>

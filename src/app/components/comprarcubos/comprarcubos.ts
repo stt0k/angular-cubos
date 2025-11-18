@@ -39,8 +39,8 @@ import { FormsModule } from '@angular/forms';
             <!-- Botones -->
             <div class="flex flex-col sm:flex-row gap-4 pt-6">
               <a
-                routerLink="/mis-apuestas"
-                class="flex-1 bg-zinc-600 hover:bg-zinc-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-colors inline-flex items-center justify-center gap-2"
+                (click)="volverMisCubos()"
+                class="flex-1 cursor-pointer bg-zinc-600 hover:bg-zinc-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-colors inline-flex items-center justify-center gap-2"
               >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -55,7 +55,7 @@ import { FormsModule } from '@angular/forms';
 
               <button
                 type="submit"
-                class="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-colors inline-flex items-center justify-center gap-2"
+                class="flex-1 cursor-pointer bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-colors inline-flex items-center justify-center gap-2"
               >
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
@@ -99,4 +99,7 @@ export class Comprarcubos implements OnInit {
     this.router.navigate(['/mis-cubos'])
   }
 
+  volverMisCubos(): void {
+    this.router.navigate(['/mis-cubos'])
+  }
 }

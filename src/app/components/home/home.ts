@@ -62,6 +62,11 @@ import { Cubo } from "../../models/cubo"
                   >
                     Color
                   </th>
+                  <th
+                    class="px-6 py-4 text-left text-sm font-semibold text-zinc-300 uppercase tracking-wider"
+                  >
+                    Precio
+                  </th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-zinc-700/50">
@@ -90,6 +95,9 @@ import { Cubo } from "../../models/cubo"
                   </td>
                   <td class="px-6 py-4">
                     <div class="text-zinc-300">{{ cubo.color }}</div>
+                  </td>
+                  <td class="px-6 py-4">
+                    <div class="text-zinc-300">€{{ cubo.precio }}.00</div>
                   </td>
                 </tr>
                 }

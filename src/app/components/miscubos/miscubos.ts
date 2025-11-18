@@ -71,8 +71,8 @@ import { Compra } from '../../models/compra';
         <!-- Botones de acción -->
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           <a
-            routerLink="/perfil"
-            class="bg-zinc-600 hover:bg-zinc-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-colors inline-flex items-center justify-center gap-2"
+            (click)="volverPerfil()"
+            class="bg-zinc-600 cursor-pointer hover:bg-zinc-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-colors inline-flex items-center justify-center gap-2"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -86,8 +86,8 @@ import { Compra } from '../../models/compra';
           </a>
 
           <a
-            routerLink="/comprar-cubos"
-            class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-colors inline-flex items-center justify-center gap-2"
+            (click)="hacerCompra()"
+            class="bg-blue-600 cursor-pointer hover:bg-blue-700 text-white px-6 py-3 rounded-lg text-lg font-medium transition-colors inline-flex items-center justify-center gap-2"
           >
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path
@@ -121,5 +121,13 @@ export class Miscubos implements OnInit {
   async cargarCompras(): Promise<void> {
     const data = await this.service.getCompras();
     this.compras = data;
+  }
+
+  hacerCompra(): void {
+    this.router.navigate(['/comprar-cubos'])
+  }
+
+  volverPerfil(): void {
+    this.router.navigate(['/perfil'])
   }
 }
